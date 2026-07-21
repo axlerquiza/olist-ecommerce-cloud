@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# dlt secrets
+.dlt/secrets.toml
+
+# dbt
+olist_dbt/target/
+olist_dbt/logs/
+olist_dbt/dbt_packages/
+
+# terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/terraform.tfvars
+
+# local working notes (mirrors olist-ecommerce-local's .gitignore)
+LOOKER_DASHBOARD.md
+DBT_MODEL_USAGE.md

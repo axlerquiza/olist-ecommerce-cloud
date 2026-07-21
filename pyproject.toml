@@ -1,0 +1,12 @@
+[project]
+name = "olist-ecommerce-cloud"
+version = "0.1.0"
+description = "Cloud-native (Terraform + dlt + BigQuery + Looker Studio) geospatial pipeline for the Olist Brazilian E-Commerce dataset."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-bigquery>=1.12.0",
+    "dlt[bigquery]>=1.28.1",
+    "pandas>=3.0.3",
+    "requests>=2.32",
+]
