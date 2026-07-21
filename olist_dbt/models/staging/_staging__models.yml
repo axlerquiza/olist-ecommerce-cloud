@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_geolocation
+    description: >
+      Mainland-Brazil-bounded geolocation samples with a derived 3-digit
+      zip prefix (olist_geo.ipynb cells 1, 5).
+    columns:
+      - name: geolocation_zip_code_prefix_3_digits
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: >
+      Customers with a derived 3-digit zip prefix, the join key onto
+      geolocation (olist_geo.ipynb cell 41).
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: >
+      Orders with delivery-relevant dates only, no status filter
+      (olist_geo.ipynb cell 42).
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_order_items
+    description: Order line items (price, freight) at item grain.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+  - name: stg_order_reviews
+    description: Order review scores.
+    columns:
+      - name: order_id
+        tests:
+          - not_null

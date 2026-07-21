@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    schema: olist_raw
+    tables:
+      - name: customers
+      - name: geolocation
+      - name: order_items
+      - name: order_reviews
+      - name: orders

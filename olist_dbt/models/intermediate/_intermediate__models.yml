@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_geolocation_zip3_centroid
+    description: >
+      One representative lat/lng centroid per 3-digit zip prefix
+      (olist_geo.ipynb cell 41, with dedup added - see model comment).
+    columns:
+      - name: geolocation_zip_code_prefix_3_digits
+        tests:
+          - unique
+          - not_null
+
+  - name: int_orders_geo_enriched
+    description: >
+      Order-grain metrics (delivery days, delay flag, freight ratio,
+      review score, item count) feeding mart_geo_zip3_metrics
+      (olist_geo.ipynb cells 42-93).
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null

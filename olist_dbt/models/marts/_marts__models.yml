@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: mart_geo_zip3_metrics
+    description: >
+      Zip-3-digit-prefix-grain geo metrics table powering the Looker
+      Studio dashboard - direct SQL port of olist_geo.ipynb cells 43-93.
+      See LOOKER_DASHBOARD.md for the panel-to-column mapping.
+    columns:
+      - name: geolocation_zip_code_prefix_3_digits
+        tests:
+          - unique
+          - not_null
